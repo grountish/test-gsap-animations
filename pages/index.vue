@@ -1,55 +1,63 @@
 <template>
   <div>
-    <section class="bg-green-300">
-      <div class="description panel blue bg-green-300">
-        <div class="p-20">
-          <h1>Scrub animations</h1>
-          <p>
-            A ScrollTrigger with <code>scrub: true</code> links the scroll
-            position to an animation's progress, making the scroll bar act like
-            a scrubber while it's between the ScrollTrigger's
-            <code>start</code> and <code>end</code>.
-          </p>
-          <div class="scroll-down">
-            Scroll down
-            <div class="arrow"></div>
-          </div>
-        </div>
+    
+    <section class="w-screen space-y-2 text-center">
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+      <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
+     
+              <button @click="animateBars" class="px-12 py-3 mx-auto border border-black hover:bg-black hover:text-white">animate</button>
+
+    </section>
+    <section class="w-screen space-y-2 overflow-x-hidden text-center section2">
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+      <div class="h-12 py-4 border border-blue-600 rounded-xl w-26 svgRectangle2"></div>
+     
+
+    </section>
+    <section class="grid h-screen place-items-center">
+      <div class="text-6xl"> <h1 class="spin">😲</h1> </div>
+      <div class="relative flex text-6xl pl-26 pt-36 extrabold">
+        <h1 class="relative letter" style="left:-270px">M</h1>
+        <h1 class="relative letter" style="left:-260px">i</h1>
+        <h1 class="relative letter" style="left:-250px">l</h1>
+        <h1 class="relative letter" style="left:-240px">t</h1>
+        <h1 class="relative letter" style="left:-236px">o</h1>
+        <h1 class="relative letter" style="left:-210px">n</h1>
+        <h1 class="relative mx-4 letter" style="left:-200px"> </h1>
+        <h1 class="relative letter" style="left:-170px">M</h1>
+        <h1 class="relative letter" style="left:-160px">a</h1>
+        <h1 class="relative letter" style="left:-150px">n</h1>
+        <h1 class="relative letter" style="left:-140px">n</h1>
+        <h1 class="relative letter" style="left:-130px">a</h1>
+        <h1 class="relative letter" style="left:-120px">r</h1>
+        <h1 class="relative letter" style="left:-110px">i</h1>
+        <h1 class="relative letter" style="left:-100px">n</h1>
+        <h1 class="relative letter" style="left:-89px">o</h1>
       </div>
     </section>
-    <section class="panel bg-red-400 red">
-      <p>
-        <span class="line line-1"></span>This line's animation will begin when
-        it enters the viewport and finish when its top edge hits the top of the
-        viewport, staying perfectly in sync with the scrollbar because it has
-        <code>scrub:&nbsp;true</code>
-      </p>
+    <section class="grid h-screen place-items-center lastSection">
+      <div class="relative flex extrabold">
+        <h1 class="text-6xl text-white transition-all duration-500 hover:text-blue-300">RadishLab_GSAP_Test</h1>
+      </div>
     </section>
-
-    <section class="panel bg-orange-400 orange">
-      <p>
-        <span class="line line-2"></span>This orange panel gets pinned when its
-        top edge hits the top of the viewport, then the line's animation is
-        linked with the scroll position until it has traveled 100% of the
-        viewport's height (<code>end: "+=100%"</code>), then the orange panel is
-        unpinned and normal scrolling resumes. Padding is added automatically to
-        push the rest of the content down so that it catches up with the scroll
-        when it unpins. You can set <code>pinSpacing: false</code> to prevent
-        that if you prefer.
-      </p>
-    </section>
-
-    <section class="panel bg-purple-400 purple">
-      <p>
-        <span class="line line-3"></span>This panel gets pinned in a similar
-        way, and has a more involved animation that's wrapped in a timeline,
-        fading the background color and animating the transforms of the
-        paragraph in addition to the line, all synced with the scroll position
-        perfectly.
-      </p>
-    </section>
-
-    <section class="panel gray">DONE!</section>
   </div>
 </template>
 
@@ -68,60 +76,70 @@ export default {
   },
 
   methods: {
+    animateBars(){
+      const svgss = gsap.utils.toArray('.svgRectangle')
+      svgss.forEach((svg,ind) => {
+        
+      gsap.to(svg, {
+       
+        width: Math.random()* 1000 ,
+        transformOrigin: 'left center',
+        ease: 'none',
+      })
+      });
+    },
     initAnimation() {
       gsap.registerPlugin(ScrollTrigger)
 
-      // --- RED PANEL ---
-      gsap.from('.line-1', {
+      const svgss = gsap.utils.toArray('.svgRectangle2')
+      svgss.forEach((svg,ind) => {
+      gsap.to(svg, {
         scrollTrigger: {
-          trigger: '.line-1',
+          trigger: svg,
           scrub: true,
           start: 'top bottom',
-          end: 'top top',
+          end: 'bottom center',
         },
-        scaleX: 0,
+        width: Math.random()* 170 * ind,
+        backgroundColor:'black',
         transformOrigin: 'left center',
         ease: 'none',
       })
-
-      // --- ORANGE PANEL ---
-      gsap.from('.line-2', {
+      })
+      const letters = gsap.utils.toArray('.letter')
+      letters.forEach((letter,ind) => {
+      gsap.from(letter, {
         scrollTrigger: {
-          trigger: '.orange',
+          trigger: letter,
           scrub: true,
-          pin: true,
-          start: 'top top',
-          end: '+=100%',
+          start: 'top bottom',
+          end: 'top center',
         },
-        scaleX: 0,
-        autoAlpha: 0,
+        top: Math.random()* 30 * ind,
+        left: Math.random()* 10 * ind,
+        opacity:0,
         transformOrigin: 'left center',
         ease: 'none',
       })
-
-      // --- PURPLE/GREEN PANEL ---
-      var tl = gsap.timeline({
+      });
+      gsap.from('.spin',{
         scrollTrigger: {
-          trigger: '.purple',
+          trigger: '.spin',
           scrub: true,
-          pin: true,
-          start: 'top top',
-          end: '+=100%',
+          start: 'top bottom',
+          end: 'center top',
         },
+        rotate:400
+      });
+      gsap.to('.lastSection',{
+        scrollTrigger: {
+          trigger: '.lastSection',
+          scrub: true,
+          start: 'top bottom',
+          end: 'center top',
+        },
+        backgroundColor:'black'
       })
-
-      tl.from('.purple p', {
-        scale: 0.3,
-        rotation: 45,
-        autoAlpha: 0,
-        ease: 'power2',
-      })
-        .from(
-          '.line-3',
-          { scaleX: 0, transformOrigin: 'left center', ease: 'none' },
-          0
-        )
-        .to('.purple', { backgroundColor: '#28a92b' }, 0)
     },
   },
 
