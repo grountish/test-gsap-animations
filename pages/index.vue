@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-x-hidden ">
     
     <section class="w-screen space-y-2 text-center">
       <div class="h-12 py-4 border border-blue-300 rounded-xl w-26 svgRectangle"></div>
@@ -55,7 +55,12 @@
     </section>
     <section class="grid h-screen place-items-center lastSection">
       <div class="relative flex extrabold">
-        <h1 class="text-6xl text-white transition-all duration-500 hover:text-blue-300">RadishLab_GSAP_Test</h1>
+        <h1 class="text-6xl text-white transition-all duration-500 hover:text-blue-300">Series Eight Demo</h1>
+      </div>
+    </section>
+    <section class="grid h-screen place-items-center lastSection">
+      <div class="relative flex extrabold">
+        <h1 class="text-6xl text-white transition-all duration-500 hover:text-blue-300 thanks">Thanks!</h1>
       </div>
     </section>
   </div>
@@ -67,6 +72,7 @@ import gsap from 'gsap'
 
 // or get other plugins:
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { transform } from '~/jest.config'
 
 export default {
   name: 'Home',
@@ -139,6 +145,17 @@ export default {
           end: 'center top',
         },
         backgroundColor:'black'
+      })
+      gsap.from('.thanks',1,{
+        scrollTrigger: {
+          trigger: '.thanks',
+           
+          start: 'top bottom',
+          end: 'center top',
+          
+        },
+        opacity:0,
+        y:+60
       })
     },
   },
